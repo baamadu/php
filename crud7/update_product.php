@@ -1,3 +1,10 @@
+<nav style="background-color: #f4f4f4; padding: 10px;">
+    <a href="products.php" style="margin-right: 15px;">Producten</a>
+    <a href="add_product.php" style="margin-right: 15px;">Nieuw product toevoegen</a>
+    <a href="manage_products.php" style="margin-right: 15px;">Producten beheren</a>
+</nav>
+<hr>
+
 <?php
 try {
     // De connectie-gegevens (aanpassen naar jouw situatie)

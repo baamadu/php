@@ -1,3 +1,12 @@
+<!-- navbar.php -->
+<nav style="background-color: #f4f4f4; padding: 10px;">
+    <a href="products.php" style="margin-right: 15px;">Producten</a>
+    <a href="add_product.php" style="margin-right: 15px;">Nieuw product toevoegen</a>
+</nav>
+<hr>
+
+
+
 <form method="post" action="process_product.php">
 <div>
 <label for="name">Productnaam:</label>
