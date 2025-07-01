@@ -1,12 +1,18 @@
 <?php
 include 'db.php';
+session_start();
 
 $result = $connection->query("SELECT * FROM platforms");
-
-if (isset($_GET['msg'])) {
-    echo "<p>" . htmlspecialchars($_GET['msg']) . "</p>";
-}
 ?>
+
+<div class="row">
+    <?php if (!empty($_SESSION['message'])): ?>
+        <div class="alert alert-success" role="alert">
+            <?= htmlspecialchars($_SESSION['message']) ?>
+            <?php $_SESSION['message'] = null; ?>
+        </div>
+    <?php endif; ?>
+</div>
 
 <h1>Platforms</h1>
 <a href="add_platform.php">Nieuw platform toevoegen</a>

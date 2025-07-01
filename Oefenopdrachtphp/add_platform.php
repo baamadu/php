@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
@@ -7,7 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $connection->prepare("INSERT INTO platforms (name, manufacturer) VALUES (?, ?)");
     $stmt->bind_param("ss", $name, $manufacturer);
     $stmt->execute();
-    header("Location: index.php?msg=Platform toegevoegd");
+
+    $_SESSION['message'] = "Platform toegevoegd";
+    header("Location: index.php");
     exit;
 }
 ?>
@@ -18,3 +21,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Fabrikant: <input type="text" name="manufacturer" required><br>
     <input type="submit" value="Toevoegen">
 </form>
+

@@ -10,3 +10,4 @@ if ($connection->connect_error) {
     die("Verbinding mislukt: " . $connection->connect_error);
 }
 ?>
+ 

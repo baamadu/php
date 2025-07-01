@@ -1,6 +1,10 @@
 <?php
+session_start();
 include 'db.php';
+
 $id = $_GET['id'];
 $connection->query("DELETE FROM platforms WHERE id=$id");
-header("Location: index.php?msg=Platform verwijderd");
+
+$_SESSION['message'] = "Platform verwijderd";
+header("Location: index.php");
 exit;
